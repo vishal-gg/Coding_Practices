@@ -1,5 +1,6 @@
 // import { useState } from "react";
 // import axios from "axios";
+import './globals.css';
 
 // const App = () => {
 //   const [quote, setQuote] = useState<any>("");
@@ -46,12 +47,23 @@
 import React from 'react'
 import Test from './Best Practice/Test'
 import SearchFilter from './Best Practice/SearchFilter'
+import PaginateSetup from './Paginate/PaginateSetup'
+import Carousel from './Carousel/SwiperCarousel'
 
 function App() {
   return (
     <div>
       {/* <Test /> */}
       {/* <SearchFilter /> */}
+      {/* <PaginateSetup /> */}
+      {/* <Carousel /> */}
+      <ul className='flex gap-5'>
+        <li className='relative p-5'><a href="#" className='hover:bg-blue-500 after-content-[""] after:w-full after:h-1 after:bg-white hover:after-bg-blue-300 after:absolute after:left-0 after:-bottom-4'>home</a></li>
+        <li className='relative p-5'><a href="#" className=' after-content-[""] after:w-full after:h-1 after:bg-white hover:after-bg-blue-300 after:absolute after:left-0 after:-bottom-4'>home</a></li>
+        <li className='relative p-5'><a href="#" className=' after-content-[""] after:w-full after:h-1 after:bg-white hover:after-bg-blue-300 after:absolute after:left-0 after:-bottom-4'>home</a></li>
+        <li className='relative p-5'><a href="#" className=' after-content-[""] after:w-full after:h-1 after:bg-white hover:after-bg-blue-300 after:absolute after:left-0 after:-bottom-4'>home</a></li>
+        <li className='relative p-5'><a href="#" className=' after-content-[""] after:w-full after:h-1 after:bg-white hover:after-bg-blue-300 after:absolute after:left-0 after:-bottom-4'>home</a></li>
+      </ul>
     </div>
   )
 }

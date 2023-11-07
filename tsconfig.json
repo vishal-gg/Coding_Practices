@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "src/Redux Toolkit/types"  ]
+, "src/Redux Toolkit/types", "src/Carousel/SwiperCarousel.tsx", "JS"  ]
 }

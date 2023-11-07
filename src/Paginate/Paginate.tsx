@@ -32,7 +32,7 @@ function Paginate({
       >
         ◀
       </button>
-      {pageNumbers.map((number) => (
+      {pageNumbers.map((number, i) => (
         <span
           onClick={() => pagination(number)}
           style={{
@@ -40,6 +40,7 @@ function Paginate({
             padding: ".5rem",
             border: "1px solid blue",
             margin: ".2rem",
+            backgroundColor: currentPage === ++i ? 'yellow': 'transparent'
           }}
           key={number}
         >
