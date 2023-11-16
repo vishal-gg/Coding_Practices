@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 100vh;
+      background: #ddd;
+      display: grid;
+      place-content: center;
+    }
+    div {
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      background: red;
+    }
+    span {
+      display: inline-block;
+      width: 15px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #000;
+      position: fixed;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div></div>
+  <span></span>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script>
+    const divRef = document.querySelector('div')
+    const spanRef = document.querySelector('span')
+
+    const xToFn = gsap.quickTo(divRef, 'x', {duration: 1, ease: 'elastic.out(1, 0.4)'})
+    const yToFn = gsap.quickTo(divRef, 'y', {duration: 1, ease: 'elastic.out(1, 0.4)'})
+
+    divRef.addEventListener('mousemove', (e) => {
+      const {width, height, left, top} = divRef.getBoundingClientRect();
+      const speed = 0.5
+      const x = e.clientX - (left + width / 2);
+      const y = e.clientY - (top + height / 2);
+      console.log({x, y})
+
+      xToFn(x * speed)
+      yToFn(y * speed)
+      
+    })
+    
+    divRef.addEventListener('mouseleave', (e) => {
+      xToFn(0)
+      yToFn(0)
+    })
+
+    window.addEventListener('mousemove', (e) => {
+      const x = e.clientX - 15
+      const y = e.clientY - 15
+
+      gsap.to(spanRef, {x, y, duration: 1, ease: 'elastic.out(1,0.8)'})
+    })
+
+  </script>
+</body>
+</html>
