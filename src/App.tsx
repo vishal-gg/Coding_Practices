@@ -53,17 +53,10 @@ import Carousel from './Carousel/SwiperCarousel'
 function App() {
   return (
     <div>
-      {/* <Test /> */}
-      {/* <SearchFilter /> */}
-      {/* <PaginateSetup /> */}
-      {/* <Carousel /> */}
-      <ul className='flex gap-5'>
-        <li className='relative p-5'><a href="#" className='hover:bg-blue-500 after-content-[""] after:w-full after:h-1 after:bg-white hover:after-bg-blue-300 after:absolute after:left-0 after:-bottom-4'>home</a></li>
-        <li className='relative p-5'><a href="#" className=' after-content-[""] after:w-full after:h-1 after:bg-white hover:after-bg-blue-300 after:absolute after:left-0 after:-bottom-4'>home</a></li>
-        <li className='relative p-5'><a href="#" className=' after-content-[""] after:w-full after:h-1 after:bg-white hover:after-bg-blue-300 after:absolute after:left-0 after:-bottom-4'>home</a></li>
-        <li className='relative p-5'><a href="#" className=' after-content-[""] after:w-full after:h-1 after:bg-white hover:after-bg-blue-300 after:absolute after:left-0 after:-bottom-4'>home</a></li>
-        <li className='relative p-5'><a href="#" className=' after-content-[""] after:w-full after:h-1 after:bg-white hover:after-bg-blue-300 after:absolute after:left-0 after:-bottom-4'>home</a></li>
-      </ul>
+       <Test />
+       <SearchFilter />
+       <PaginateSetup />
+       <Carousel />
     </div>
   )
 }

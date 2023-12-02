@@ -42,40 +42,48 @@ interface dataT {
 function Test() {
   const [inputValue, setInputValue] = useState('');
   const [printValue, setPrintValue] = useState<dataT[]>([]);
-  const cancelToken = useRef<CancelTokenSource | undefined>(undefined);
+  // const cancelToken = useRef<CancelTokenSource | undefined>(undefined);
 
 
   useEffect(() => {
-    if (cancelToken.current) {
-      cancelToken.current.cancel('cancel previous request');
-    }
+    // cancelToke is deprecated
+    
+    // if (cancelToken.current) {
+    //   cancelToken.current.cancel('cancel previous request');
+    // }
 
-    cancelToken.current = axios.CancelToken.source();
+    // cancelToken.current = axios.CancelToken.source();
+
+    const controller = new AbortController()
 
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
           `https://backend-omega-seven.vercel.app/api/getjoke`,
-          { cancelToken: cancelToken.current?.token }
+          // { cancelToken: cancelToken.current?.token }
+          {signal: controller.signal}
         );
         setPrintValue(data);
       } catch (error:any) {
         if (!axios.isCancel(error)) {
           console.log(error.message);
         } 
+        console.log(error)
       }
     };
 
     fetchData();
 
-    return () => {
-      if (cancelToken.current) {
-        cancelToken.current.cancel('cancel request on component unmount');
-      }
-    };
+    return () => controller.abort()
+
+    // return () => {
+    //   if (cancelToken.current) {
+    //     cancelToken.current.cancel('cancel request on component unmount');
+    //   }
+    // }
+
   }, [inputValue]);
 
-console.log('execution ended')
   return (
     <div>
       <input className="border" type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
