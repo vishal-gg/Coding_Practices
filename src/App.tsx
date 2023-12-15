@@ -4,7 +4,7 @@ import SearchFilter from './Best Practice/SearchFilter'
 import PaginateSetup from './Paginate/PaginateSetup'
 import Carousel from './Carousel/SwiperCarousel'
 import TaskManager from './Task Manager/TaskManager';
-import Search from './Student/Search'
+import Search from './Student Dormittory/Search';
 
 function App() {
   return (
