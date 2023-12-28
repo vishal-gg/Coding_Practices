@@ -1,8 +1,8 @@
-const promise1 = fetch('https://jsonplaceholder.typicode.com/users')
-const promise2 = fetch('https://jsonplaceholder.typicode.com/users')
-const promise3 = fetch('https://jsonplaceholder.typicode.com/users')
-const promise4 = fetch('https://jsonplaceholder.typicode.com/users')
-const promise5 = fetch('https://jsonplaceholder.typicode.com/users')
+const promise1 = fetch('https://jsonplaceholder.typicode.com/users/1')
+const promise2 = fetch('https://jsonplaceholder.typicode.com/users/2')
+const promise3 = fetch('https://jsonplaceholder.typicode.com/users/3')
+const promise4 = fetch('https://jsonplaceholder.typicode.com/users/4')
+const promise5 = fetch('https://jsonplaceholder.typicode.com/users/5')
   
 const results = Promise.all([promise1, promise2, promise3, promise4, promise5])
 
